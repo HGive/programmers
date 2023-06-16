@@ -1,16 +1,15 @@
 class Solution {
     
     boolean solution(String s) {
-        int p=0;
-        int y=0;
+        int cnt=0;
         String[] a = s.toLowerCase().split("");
         for(int i =0;i<a.length;i++){
             if(a[i].equals("p")){
-                p++;
+                cnt++;
             }else if(a[i].equals("y")){
-                y++;
+                cnt--;
             }
         }
-        return (p==y?true:false);
+        return cnt==0;
     }
 }
