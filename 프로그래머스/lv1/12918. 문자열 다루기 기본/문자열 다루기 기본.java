@@ -7,7 +7,6 @@ class Solution {
                 if(s.charAt(i)>'9'||s.charAt(i)<'0'){
                     
                     answer=false;
-                    break;
                 }
             }
         }else{
