@@ -1,17 +1,12 @@
 import java.util.*;
 class Solution {
     public int[] solution(long n) {
-             int cnt=0;
-        long num =n;
-        while(num!=0){
-            num/=10;
-            cnt++;
-        }
-        int[] answer = new int[cnt];
-        num=n;
-        for(int i =0;i<cnt;i++){
-            answer[i]=(int)(num%10);
-            num/=10;
+        String s = ""+n;
+        int[] answer = new int[s.length()];
+        
+        for(int i =0;i<s.length();i++){
+            answer[i]=(int)(n%10);
+            n/=10;
         
     }
         return answer;
