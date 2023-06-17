@@ -3,7 +3,7 @@ class Solution {
         int answer = 0;
         String temp= "";
         while(n>0){
-            temp+=n%3;
+            temp=temp + n%3 ;
             n/=3;
         }
          // temp = "0021"
