@@ -6,8 +6,8 @@ class Solution {
         int height=Integer.MIN_VALUE;
         for(int i = 0 ; i<sizes.length;i++){
             Arrays.sort(sizes[i]);
-            width=sizes[i][0]>width?sizes[i][0]:width;
-            height=sizes[i][1]>height?sizes[i][1]:height;
+            width=Math.max(width,sizes[i][0]);
+            height=Math.max(height,sizes[i][1]);
         }
         return width*height;
     }
