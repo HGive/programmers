@@ -16,15 +16,9 @@ class Solution {
             }
         }
         
-        answer[0]=7-zeroCnt-matchCnt;
-        answer[1]=7-matchCnt;
-        
-        if(answer[0]>6){
-            answer[0]=6;
-        }
-        if(answer[1]>6){
-            answer[1]=6;
-        }
+        answer[0]=Math.min(7-zeroCnt-matchCnt,6);
+        answer[1]=Math.min(7-matchCnt,6);
+
         return answer;
     }
 }
