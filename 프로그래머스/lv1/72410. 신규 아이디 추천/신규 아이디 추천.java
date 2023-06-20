@@ -9,9 +9,7 @@ class Solution {
         }
         if(new_id.length()>=16){
             new_id=new_id.substring(0,15);
-            if(new_id.charAt(14)=='.'){
                 new_id = new_id.replaceAll("[.]$","");
-            }
         }
         if(new_id.length()<=2&&new_id.length()>=1){
             while(new_id.length()<3){
