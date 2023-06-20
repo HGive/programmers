@@ -4,17 +4,10 @@ class Solution {
         int l = commands.length;
         int[] answer = new int[l];
         for(int i = 0; i<l;i++){
-            int[] temp = {};
-            int start = commands[i][0];
-            int end = commands[i][1];
-            int k = commands[i][2];
-            for(int j = 0; j<commands[i].length;j++){
-                temp = Arrays.copyOfRange(array,start-1,end);
-                Arrays.sort(temp);
-                answer[i]=temp[k-1];
-            }
+            int[] temp = Arrays.copyOfRange(array,commands[i][0]-1,commands[i][1]);
+            Arrays.sort(temp);
+            answer[i]=temp[commands[i][2]-1];
         }
-        
         return answer;
     }
 }
