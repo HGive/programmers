@@ -3,8 +3,8 @@ class Solution {
         StringBuilder sb = new StringBuilder();
         String answer = "";
         for(int a : index_list){
-            answer+=my_string.charAt(a);
+            sb.append(my_string.charAt(a));
         }
-        return answer;
+        return sb.toString();
     }
 }
