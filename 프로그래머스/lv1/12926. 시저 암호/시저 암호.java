@@ -2,26 +2,17 @@ class Solution {
     public String solution(String s, int n) {
         String answer = "";
         char[] ch = s.toCharArray();
-        for(int i = 0 ; i < ch.length; i++){
-            if(ch[i]==' '){
-                answer+=" ";
-                continue;
+        for(char c : ch){
+            if(c==' '){
+              answer+=c;
+              continue;
             }
-                
-            if(ch[i]-0>96&&ch[i]-0<123){
-                if(ch[i]-0+n>122){
-                    ch[i]=(char)(ch[i]-0+n-26);
-                }else{
-                    ch[i]=(char)(ch[i]-0+n);
-                }
-            }else if(ch[i]-0>64&&ch[i]-0<91){
-                if(ch[i]-0+n>90){
-                    ch[i]=(char)(ch[i]-0+n-26);
-                }else{
-                    ch[i]=(char)(ch[i]-0+n);
-                }
+            if(c>='a'&&c<='z'){
+                c=(char)('a'+(c+n-'a')%26);
+            }else if(c>='A'&&c<='Z'){
+                c=(char)('A'+(c+n-'A')%26);
             }
-            answer+=ch[i];
+            answer+=c;
         }
         return answer;
     }
