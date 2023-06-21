@@ -1,7 +1,6 @@
 import java.util.*;
 class Solution {
     public int solution(int[] nums) {
-        int answer = 0;
         int cnt =0;
         ArrayList<Integer> container =new ArrayList<>();
         
@@ -11,7 +10,6 @@ class Solution {
                     cnt++;
                 }
             }
-            
         
         return cnt;
     }
