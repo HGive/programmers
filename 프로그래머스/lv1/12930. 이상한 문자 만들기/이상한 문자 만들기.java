@@ -12,7 +12,7 @@ class Solution {
             }else if(idx%2!=0){
                     str[i]=str[i].toLowerCase();
                     idx++;
-                }
+            }
             answer+=str[i];
             }   
 
