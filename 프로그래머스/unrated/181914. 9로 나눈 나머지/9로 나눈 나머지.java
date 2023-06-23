@@ -2,13 +2,9 @@ import java.util.*;
 class Solution {
     public int solution(String number) {
         int sum = 0;
-        String[] str = number.split("");
-        int[] num = new int[str.length];
-        for(int i = 0 ; i<str.length;i++){
-            num[i] = Integer.parseInt(str[i]);
-            sum+=num[i];
+        for(int i = 0 ; i<number.length();i++){
+            sum+= number.charAt(i) - '0';   
         }
-        
         return sum%9;
     }
 }
