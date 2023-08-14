@@ -1,12 +1,11 @@
 import java.util.*;
 class Solution {
     public String[] solution(String myStr) {
-        String[] parts = myStr.split("");
         StringBuilder sb = new StringBuilder();
         List<String> list = new ArrayList<>();
-        for(String str : parts){
-            if(!str.matches("[abc]")){
-                sb.append(str);
+        for(char ch : myStr.toCharArray()){
+            if(ch != 'a' && ch != 'b' && ch != 'c'){
+                sb.append(ch);
             }else{
                 if(sb.length()!=0){
                     list.add(sb.toString());
@@ -14,9 +13,11 @@ class Solution {
                 }
             }
         }
-        list.add(sb.toString());
-        if(list.get(0).equals("")){
-            list.set(0,"EMPTY");
+        if (sb.length() != 0) {
+            list.add(sb.toString());
+        }
+        if (list.isEmpty() || list.get(0).equals("")) {
+            list.add("EMPTY");
         }
         return list.toArray(new String[0]);
     }
