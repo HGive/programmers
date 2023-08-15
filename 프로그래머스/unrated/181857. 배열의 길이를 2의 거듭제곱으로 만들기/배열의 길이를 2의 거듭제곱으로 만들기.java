@@ -9,9 +9,6 @@ class Solution {
             s*=2;
         }
         int[] answer = new int[s];
-        for(int item : answer){
-            item= 0;
-        }
         for(int i =0; i<leng;i++){
             answer[i]=arr[i];
         }
