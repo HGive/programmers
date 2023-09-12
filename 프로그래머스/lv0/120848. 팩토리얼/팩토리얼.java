@@ -3,9 +3,9 @@ class Solution {
         int answer =1;
         int fac = 1; 
         while(n>=fac){
-            fac*=answer;
             answer++;
+            fac*=answer;
         }
-        return answer-2;
+        return answer-1;
     }
 }
