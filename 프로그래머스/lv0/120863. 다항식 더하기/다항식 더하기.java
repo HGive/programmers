@@ -1,5 +1,6 @@
 class Solution {
     public String solution(String polynomial) {
+        StringBuilder sb = new StringBuilder();
         int x = 0;
         int c = 0;
         polynomial=polynomial.replace("+ ","");
@@ -13,17 +14,16 @@ class Solution {
                 c+=Integer.parseInt(str);
             }
         }
-        String answer ="";
         if(x==1){
-            answer+="x";
+            sb.append("x");
         }else if(x!=0){
-            answer+=x+"x";
+            sb.append(x+"x");
         }
-        if(!answer.isEmpty()&&c!=0){
-            answer+=" + "+c;
+        if(sb.length()!=0&&c!=0){
+            sb.append(" + "+c);
         }else if(c!=0){
-            answer+=c+"";
+            sb.append(c+"");
         }
-        return answer;
+        return sb.toString();
     }
 }
