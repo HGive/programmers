@@ -6,10 +6,10 @@ class Solution {
         polynomial=polynomial.replace("+ ","");
         String[] arr = polynomial.split(" ");
         for(String str : arr){
-            if(str.contains("x")&&str.length()>1){
-                x+=Integer.parseInt(str.replace("x",""));
+            if(str.equals("x")){
+                x+=1;
             }else if(str.contains("x")){
-                x+=1;   
+                x+=Integer.parseInt(str.replace("x",""));
             }else{
                 c+=Integer.parseInt(str);
             }
