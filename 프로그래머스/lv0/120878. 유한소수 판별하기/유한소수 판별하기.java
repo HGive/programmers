@@ -1,15 +1,18 @@
 class Solution {
     public int solution(int a, int b) {
-        int common = gcd(a,b);
-        b= b/common;
-        if(b==1||b==2||b==5)return 1;
-        while(b%2==0){
-        b/=2;
+        b/=gcd(a,b);
+        while(b!=1){
+            if(b%2==0){
+                b/=2;
+                continue;
+            }
+            if(b%5==0){
+                b/=5;
+                continue;
+            }
+            return 2;
         }
-        while(b%5==0){
-        b/=5;
-        }
-        return b==1?1:2;
+        return 1;
     }
     
     public int gcd(int a , int b){
