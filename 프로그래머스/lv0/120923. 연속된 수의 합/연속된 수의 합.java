@@ -1,12 +1,8 @@
 class Solution {
     public int[] solution(int num, int total) {
         int[] answer = new int[num];
-        int start=0;
-        if(num%2==0){
-            start = total/num-num/2+1;
-        }else{
-            start = total/num-num/2;
-        }
+        int check = num*(num+1)/2;
+        int start = (total-check)/num+1;
         for(int i = 0 ; i<num;i++){
             answer[i]= start++;
         }
