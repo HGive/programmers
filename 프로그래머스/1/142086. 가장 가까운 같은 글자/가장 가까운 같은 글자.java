@@ -1,13 +1,12 @@
+import java.util.*;
 class Solution {
     public int[] solution(String s) {
         int[] answer = new int[s.length()];
-        String[] strArr = s.split("");
+        Map<Character,Integer> hm = new HashMap<>();
         for(int i = 0 ; i<s.length();i++){
-            if(s.indexOf(strArr[i])==i){
-                answer[i]=-1;
-            }else{
-                answer[i]=i-s.substring(0,i).lastIndexOf(strArr[i]);
-            }
+            char ch = s.charAt(i);
+            answer[i]=i-hm.getOrDefault(ch,i+1);
+            hm.put(ch,i);
         }
         return answer;
     }
