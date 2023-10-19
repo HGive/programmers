@@ -1,20 +1,20 @@
 import java.util.*;
 class Solution {
     public String solution(String[] cards1, String[] cards2, String[] goal) {
-        Stack<String> sk1 = new Stack<>();
-        Stack<String> sk2 = new Stack<>();
-        for(int i = cards1.length-1;i>=0;i--){
-            sk1.push(cards1[i]);
+        Queue<String> q1 = new LinkedList<>();
+        Queue<String> q2 = new LinkedList<>();
+        for(String str : cards1){
+            q1.offer(str);
         }
-        for(int i = cards2.length-1;i>=0;i--){
-            sk2.push(cards2[i]);
+        for(String str : cards2){
+            q2.offer(str);
         }
         for(int i = 0 ; i<goal.length;i++){
-            if(!sk1.isEmpty()&&goal[i].equals(sk1.peek())){
-                sk1.pop();
+            if(goal[i].equals(q1.peek())){
+                q1.poll();
                 continue;
-            }else if(!sk2.isEmpty()&&goal[i].equals(sk2.peek())){
-                sk2.pop();
+            }else if(goal[i].equals(q2.peek())){
+                q2.poll();
                 continue;
             }else{
                 return "No";
