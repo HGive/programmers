@@ -10,15 +10,9 @@ class Solution {
             int end = file.lastIndexOf("#");
             if(start!=-1){
                 if(i<=lux) lux = i;
-                if(start<=luy){
-                    luy = start;
-                }
-                if(end>=rdy){
-                    rdy = end;
-                }
-                if(i>=rdx){
-                    rdx = i;
-                }
+                if(start<=luy) luy = start;
+                if(end>=rdy) rdy = end;
+                if(i>=rdx) rdx = i;
             }
         }
         int[] answer = new int[]{lux,luy,rdx+1,rdy+1};
