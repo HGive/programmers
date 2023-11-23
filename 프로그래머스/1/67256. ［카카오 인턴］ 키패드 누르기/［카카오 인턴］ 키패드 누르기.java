@@ -13,24 +13,34 @@ class Solution {
                 r=number;
             }else{
                 if(number==0) number=11;
-                int lDistance=Math.abs(number-l)/3+Math.abs(number-l)%3;
-                int rDistance=Math.abs(number-r)/3+Math.abs(number-r)%3;
-                if(lDistance>rDistance){
-                    sb.append("R");
+                char closeHand = getCloseHand(number,l,r,hand);
+                sb.append(closeHand);
+                if(closeHand=='R'){
                     r=number;
-                }else if(lDistance<rDistance){
-                    sb.append("L");
-                    l=number;
                 }else{
-                    if(hand.equals("right")){r=number;
-                                            sb.append("R");}
-                    else{l=number;
-                        sb.append("L");} 
+                    l=number;
                 }
             }
         }
         return sb.toString();
+        
     }
     
+    private char getCloseHand(int number, int l ,int r, String hand){
+
+        int lDistance=Math.abs(number-l)/3+Math.abs(number-l)%3;
+        int rDistance=Math.abs(number-r)/3+Math.abs(number-r)%3;
+        if(lDistance>rDistance){
+            return 'R';
+        }else if(lDistance<rDistance){
+            return 'L';
+        }else{
+            if(hand.equals("right")){
+                return 'R';
+            } else{
+                return 'L';
+            } 
+        }
+    }
     
 }
